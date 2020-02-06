@@ -32,7 +32,7 @@ for x,y in zip(filelist[0:7000],substance[0:7000]):
         file=file.read().lower()
         y=str(y)
         y=y.lower()
-        findindex(file,y,'ORG')
+        findindex(file,y,'Substance')
     except Exception as e:
         print(e)
         pass
@@ -52,7 +52,7 @@ for i in range(10):
     for batch in spacy.util.minibatch(trainingdata):
         texts = [text for text, annotation in batch]
         annotations = [annotation for text, annotation in batch]
-        nlp2.update(texts, annotations)    
+        nlpsubstance.update(texts, annotations)    
     
     
     
